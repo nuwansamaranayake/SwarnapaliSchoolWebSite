@@ -48,12 +48,12 @@ export default function Navigation({ onLoginClick, onLanguageChange, currentLang
                 className="w-8 h-8 sm:w-10 sm:h-10 object-contain flex-shrink-0"
                 data-testid="img-school-logo"
               />
-              <div className="min-w-[100px] sm:min-w-[140px]">
+              <div className="min-w-[100px] sm:min-w-[160px]">
                 <div className="font-heading font-bold text-xs sm:text-base leading-tight text-foreground whitespace-nowrap">
                   {currentLanguage === 'en' ? 'Swarnapali Balika' : 'ස්වර්ණපාලි බාලිකා'}
                 </div>
-                <div className="text-[9px] sm:text-xs text-muted-foreground whitespace-nowrap">
-                  {currentLanguage === 'en' ? 'National School' : 'ජාතික පාසල'}
+                <div className="text-[9px] sm:text-xs text-muted-foreground whitespace-nowrap leading-tight">
+                  {currentLanguage === 'en' ? 'National School, Anuradhapura' : 'ජාතික පාසල, අනුරාධපුරය'}
                 </div>
               </div>
             </div>
