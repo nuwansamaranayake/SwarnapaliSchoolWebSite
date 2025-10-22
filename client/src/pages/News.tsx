@@ -7,15 +7,14 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Search, ChevronLeft, ChevronRight } from "lucide-react";
-import img1 from "@assets/stock_images/female_students_in_u_2bec6baa.jpg";
-import img2 from "@assets/stock_images/school_science_labor_82058253.jpg";
-import img3 from "@assets/stock_images/students_cultural_da_0a34e028.jpg";
-import img4 from "@assets/stock_images/school_sports_day_at_9d91c8e1.jpg";
-import img5 from "@assets/stock_images/school_library_stude_4237ecc1.jpg";
-import img6 from "@assets/stock_images/female_students_in_u_938ca3ad.jpg";
-import img7 from "@assets/stock_images/students_cultural_da_0530a279.jpg";
-import img8 from "@assets/stock_images/school_sports_day_at_0031217f.jpg";
-import img9 from "@assets/stock_images/school_computer_lab__171354a2.jpg";
+import achievementImg from "@assets/stock_images/sri_lankan_school_gi_9f7f7e86.jpg";
+import culturalImg1 from "@assets/stock_images/sri_lankan_school_cu_8cf41eba.jpg";
+import culturalImg2 from "@assets/stock_images/sri_lankan_school_cu_7f1b3a04.jpg";
+import culturalImg3 from "@assets/stock_images/sri_lankan_school_cu_0ae1f61c.jpg";
+import sportsImg1 from "@assets/stock_images/sri_lankan_school_gi_cb56b1dc.jpg";
+import sportsImg2 from "@assets/stock_images/sri_lankan_school_gi_9e145391.jpg";
+import sportsImg3 from "@assets/stock_images/sri_lankan_school_gi_019a88cc.jpg";
+import studentImg from "@assets/stock_images/sri_lankan_school_gi_413e6e4c.jpg";
 
 export default function News() {
   const { language } = useApp();
@@ -63,7 +62,7 @@ export default function News() {
       category: language === 'en' ? "Achievement" : "ජයග්‍රහණ",
       categorySlug: "achievements",
       date: "2024-03-15",
-      image: img1
+      image: achievementImg
     },
     {
       id: 2,
@@ -74,7 +73,7 @@ export default function News() {
       category: language === 'en' ? "Academic" : "අධ්‍යාපනික",
       categorySlug: "academic",
       date: "2024-03-10",
-      image: img2
+      image: "https://swarnapalibalika.lk/img/school7.jpg"
     },
     {
       id: 3,
@@ -85,7 +84,7 @@ export default function News() {
       category: language === 'en' ? "Events" : "උත්සව",
       categorySlug: "events",
       date: "2024-03-05",
-      image: img3
+      image: culturalImg1
     },
     {
       id: 4,
@@ -96,7 +95,7 @@ export default function News() {
       category: language === 'en' ? "Achievement" : "ජයග්‍රහණ",
       categorySlug: "achievements",
       date: "2024-02-28",
-      image: img4
+      image: sportsImg1
     },
     {
       id: 5,
@@ -107,7 +106,7 @@ export default function News() {
       category: language === 'en' ? "Academic" : "අධ්‍යාපනික",
       categorySlug: "academic",
       date: "2024-02-20",
-      image: img5
+      image: "https://swarnapalibalika.lk/img/school4.jpg"
     },
     {
       id: 6,
@@ -118,7 +117,7 @@ export default function News() {
       category: language === 'en' ? "Events" : "උත්සව",
       categorySlug: "events",
       date: "2024-02-15",
-      image: img6
+      image: studentImg
     },
     {
       id: 7,
@@ -129,7 +128,7 @@ export default function News() {
       category: language === 'en' ? "Events" : "උත්සව",
       categorySlug: "events",
       date: "2024-02-10",
-      image: img7
+      image: culturalImg2
     },
     {
       id: 8,
@@ -140,7 +139,7 @@ export default function News() {
       category: language === 'en' ? "Events" : "උත්සව",
       categorySlug: "events",
       date: "2024-01-30",
-      image: img8
+      image: sportsImg2
     },
     {
       id: 9,
@@ -151,7 +150,7 @@ export default function News() {
       category: language === 'en' ? "Academic" : "අධ්‍යාපනික",
       categorySlug: "academic",
       date: "2024-01-20",
-      image: img9
+      image: "https://swarnapalibalika.lk/img/school5.jpg"
     }
   ];
 
