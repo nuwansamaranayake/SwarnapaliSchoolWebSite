@@ -55,6 +55,9 @@ export default function Navigation({ onLoginClick, onLanguageChange, currentLang
                 <div className="text-[9px] sm:text-xs text-muted-foreground whitespace-nowrap leading-tight">
                   {currentLanguage === 'en' ? 'National School, Anuradhapura' : 'ජාතික පාසල, අනුරාධපුරය'}
                 </div>
+                <div className="font-sinhala text-[8px] sm:text-[10px] text-primary whitespace-nowrap leading-tight mt-0.5">
+                  ප්‍රඥාව හා ආදර්ශය
+                </div>
               </div>
             </div>
           </Link>

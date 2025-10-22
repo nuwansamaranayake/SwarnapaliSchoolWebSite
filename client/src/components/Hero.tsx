@@ -10,18 +10,16 @@ export default function Hero({ language }: HeroProps) {
   const content = {
     en: {
       subtitle: "Leading Girls' School in North Central Province",
-      motto: "Wisdom and Virtue",
-      mottoSinhala: "ප්‍රඥාව හා ආදර්ශය",
-      title: "Excellence Through Knowledge and Virtue",
+      title: "Excellence Through Exceptional Knowledge, Wisdom and Virtue",
+      motto: "ප්‍රඥාව හා ආදර්ශය",
       description: "Swarnapali Balika National School has been recognized as the leading girls school in North Central Province for several decades, producing outstanding students in all fields of education.",
       cta1: "Take Virtual Tour",
       cta2: "Admissions 2025"
     },
     si: {
       subtitle: "උතුරු මධ්‍යම පළාතේ ප්‍රමුඛ පෙළේ බාලිකා පාසල",
+      title: "විශිෂ්ට දැනුම, ප්‍රඥාව සහ ආදර්ශය තුළින් විශිෂ්ටත්වය",
       motto: "ප්‍රඥාව හා ආදර්ශය",
-      mottoSinhala: "Wisdom and Virtue",
-      title: "දැනුමෙන්, ගුණයෙන් විශිෂ්ටත්වය",
       description: "ස්වර්ණපාලි බාලිකා ජාතික පාසල දශක ගණනාවක් තිස්සේ උතුරු මධ්‍යම පළාතේ ප්‍රමුඛතම බාලිකා පාසල ලෙස පිළිගැනීමට ලක්ව ඇත.",
       cta1: "අථත්‍ය චාරිකාව",
       cta2: "ඇතුළත් වීම 2025"
@@ -43,22 +41,17 @@ export default function Hero({ language }: HeroProps) {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl">
-          <div className="inline-block mb-4 px-4 py-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full">
+          <div className="inline-block mb-6 px-4 py-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full">
             <span className="text-primary text-sm font-medium" data-testid="text-hero-subtitle">{c.subtitle}</span>
-          </div>
-          
-          <div className="mb-6 inline-block px-6 py-3 bg-gradient-to-r from-primary/30 to-accent/30 backdrop-blur-md border-2 border-primary/50 rounded-lg">
-            <p className="font-sinhala text-xl md:text-2xl text-primary font-bold tracking-wide" data-testid="text-school-motto">
-              {c.motto}
-            </p>
-            <p className="text-sm md:text-base text-white/90 mt-1 font-medium" data-testid="text-school-motto-translation">
-              {c.mottoSinhala}
-            </p>
           </div>
           
           <h1 className="font-heading font-bold text-4xl md:text-6xl lg:text-7xl text-white mb-6" data-testid="text-hero-title">
             {c.title}
           </h1>
+          
+          <p className="font-sinhala text-3xl md:text-5xl lg:text-6xl text-primary font-bold mb-8" data-testid="text-school-motto">
+            {c.motto}
+          </p>
 
           <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed" data-testid="text-hero-description">
             {c.description}
