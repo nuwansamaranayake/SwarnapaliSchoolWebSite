@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import culturalImg from "@assets/stock_images/sri_lankan_school_cu_7f1b3a04.jpg";
+import achievementImg from "@assets/stock_images/sri_lankan_school_gi_9f7f7e86.jpg";
 
 interface NewsSectionProps {
   language: string;
@@ -35,7 +36,7 @@ export default function NewsSection({ language }: NewsSectionProps) {
         : "ස්වර්ණපාලි බාලිකා සා.පෙ. විභාගයෙන් 95% සමත්වීමක් ලබා ගනිමින් පළාතේ ඉහළම ප්‍රතිඵලය ලබා ගනී.",
       category: language === 'en' ? "Achievement" : "ජයග්‍රහණ",
       date: "2024-03-15",
-      image: "https://swarnapalibalika.lk/img/Olevel-2023.jpg"
+      image: achievementImg
     },
     {
       id: 2,
