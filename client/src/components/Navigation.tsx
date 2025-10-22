@@ -39,31 +39,32 @@ export default function Navigation({ onLoginClick, onLanguageChange, currentLang
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" data-testid="link-home">
-            <div className="flex items-center space-x-2 sm:space-x-3 cursor-pointer hover-elevate active-elevate-2 px-2 sm:px-3 py-2 rounded-md">
+        <div className="flex items-center justify-between gap-4 h-16">
+          <Link href="/" data-testid="link-home" className="flex-shrink-0">
+            <div className="flex items-center gap-2 sm:gap-3 cursor-pointer hover-elevate active-elevate-2 px-2 sm:px-3 py-2 rounded-md">
               <img 
                 src={schoolLogo} 
                 alt="Swarnapali Balika National School Logo" 
-                className="w-10 h-10 object-contain"
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain flex-shrink-0"
                 data-testid="img-school-logo"
               />
-              <div className="hidden md:block">
-                <div className="font-heading font-bold text-lg text-foreground">
+              <div className="hidden sm:block min-w-[140px]">
+                <div className="font-heading font-bold text-sm sm:text-base leading-tight text-foreground whitespace-nowrap">
                   {currentLanguage === 'en' ? 'Swarnapali Balika' : 'ස්වර්ණපාලි බාලිකා'}
                 </div>
-                <div className="text-xs text-muted-foreground">
+                <div className="text-[10px] sm:text-xs text-muted-foreground whitespace-nowrap">
                   {currentLanguage === 'en' ? 'National School' : 'ජාතික පාසල'}
                 </div>
               </div>
             </div>
           </Link>
 
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center gap-1 flex-1 justify-center">
             {navItems.map((item) => (
               <Link key={item.path} href={item.path} data-testid={`link-nav-${item.path.slice(1) || 'home'}`}>
                 <Button
                   variant={isActive(item.path) ? "secondary" : "ghost"}
+                  size="sm"
                   className="hover-elevate active-elevate-2"
                 >
                   {item.label}
@@ -72,7 +73,7 @@ export default function Navigation({ onLoginClick, onLanguageChange, currentLang
             ))}
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-2 flex-shrink-0">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon" className="hover-elevate active-elevate-2" data-testid="button-language-toggle">
@@ -92,7 +93,7 @@ export default function Navigation({ onLoginClick, onLanguageChange, currentLang
             <Button
               variant="ghost"
               size="icon"
-              className="hover-elevate active-elevate-2 hidden sm:flex"
+              className="hover-elevate active-elevate-2 hidden md:flex"
               data-testid="button-notifications"
             >
               <Bell className="h-5 w-5" />
@@ -101,12 +102,14 @@ export default function Navigation({ onLoginClick, onLanguageChange, currentLang
 
             <Button
               variant="default"
-              className="hidden sm:flex hover-elevate active-elevate-2"
+              size="sm"
+              className="hidden md:flex hover-elevate active-elevate-2"
               onClick={onLoginClick}
               data-testid="button-student-login"
             >
               <LogIn className="h-4 w-4 mr-2" />
-              {currentLanguage === 'en' ? 'Student Login' : 'ශිෂ්‍ය පිවිසුම'}
+              <span className="hidden lg:inline">{currentLanguage === 'en' ? 'Student Login' : 'ශිෂ්‍ය පිවිසුම'}</span>
+              <span className="lg:hidden">{currentLanguage === 'en' ? 'Login' : 'පිවිසුම'}</span>
             </Button>
 
             <Button
