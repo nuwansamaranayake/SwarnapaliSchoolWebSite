@@ -2,9 +2,8 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, ArrowRight } from "lucide-react";
-import img1 from "@assets/stock_images/female_students_in_u_2bec6baa.jpg";
-import img2 from "@assets/stock_images/school_science_labor_82058253.jpg";
-import img3 from "@assets/stock_images/students_cultural_da_0a34e028.jpg";
+import { Link } from "wouter";
+import culturalImg from "@assets/stock_images/sri_lankan_school_cu_7f1b3a04.jpg";
 
 interface NewsSectionProps {
   language: string;
@@ -36,7 +35,7 @@ export default function NewsSection({ language }: NewsSectionProps) {
         : "ස්වර්ණපාලි බාලිකා සා.පෙ. විභාගයෙන් 95% සමත්වීමක් ලබා ගනිමින් පළාතේ ඉහළම ප්‍රතිඵලය ලබා ගනී.",
       category: language === 'en' ? "Achievement" : "ජයග්‍රහණ",
       date: "2024-03-15",
-      image: img1
+      image: "https://swarnapalibalika.lk/img/Olevel-2023.jpg"
     },
     {
       id: 2,
@@ -46,7 +45,7 @@ export default function NewsSection({ language }: NewsSectionProps) {
         : "නවීන පහසුකම් සහිත නවීන විද්‍යා විද්‍යාගාරය දැන් සිසුන් සඳහා ලබා ගත හැකිය.",
       category: language === 'en' ? "Infrastructure" : "යටිතල පහසුකම්",
       date: "2024-03-10",
-      image: img2
+      image: "https://swarnapalibalika.lk/img/school7.jpg"
     },
     {
       id: 3,
@@ -56,7 +55,7 @@ export default function NewsSection({ language }: NewsSectionProps) {
         : "වාර්ෂික සංස්කෘතික උළෙල අපගේ සිසුන්ගේ සම්ප්‍රදායික කලාවන්හි විශිෂ්ට දක්ෂතා ප්‍රදර්ශනය කරයි.",
       category: language === 'en' ? "Events" : "උත්සව",
       date: "2024-03-05",
-      image: img3
+      image: culturalImg
     }
   ];
 
@@ -75,52 +74,55 @@ export default function NewsSection({ language }: NewsSectionProps) {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {newsItems.map((item) => (
-            <Card 
-              key={item.id} 
-              className="overflow-hidden hover-elevate cursor-pointer group border-card-border"
-              data-testid={`card-news-${item.id}`}
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-300"
-                  data-testid={`img-news-${item.id}`}
-                />
-                <div className="absolute top-4 left-4">
-                  <Badge variant="secondary" className="bg-primary text-primary-foreground">
-                    {item.category}
-                  </Badge>
+            <Link key={item.id} href="/news">
+              <Card 
+                className="overflow-hidden hover-elevate cursor-pointer group border-card-border"
+                data-testid={`card-news-${item.id}`}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-300"
+                    data-testid={`img-news-${item.id}`}
+                  />
+                  <div className="absolute top-4 left-4">
+                    <Badge variant="secondary" className="bg-primary text-primary-foreground">
+                      {item.category}
+                    </Badge>
+                  </div>
                 </div>
-              </div>
-              <CardHeader>
-                <div className="flex items-center text-sm text-muted-foreground mb-2">
-                  <Calendar className="w-4 h-4 mr-2" />
-                  {new Date(item.date).toLocaleDateString(language === 'en' ? 'en-US' : 'si-LK')}
-                </div>
-                <h3 className="font-heading font-semibold text-xl text-foreground group-hover:text-primary transition-colors" data-testid={`text-news-title-${item.id}`}>
-                  {item.title}
-                </h3>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground" data-testid={`text-news-excerpt-${item.id}`}>
-                  {item.excerpt}
-                </p>
-              </CardContent>
-            </Card>
+                <CardHeader>
+                  <div className="flex items-center text-sm text-muted-foreground mb-2">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    {new Date(item.date).toLocaleDateString(language === 'en' ? 'en-US' : 'si-LK')}
+                  </div>
+                  <h3 className="font-heading font-semibold text-xl text-foreground group-hover:text-primary transition-colors" data-testid={`text-news-title-${item.id}`}>
+                    {item.title}
+                  </h3>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground" data-testid={`text-news-excerpt-${item.id}`}>
+                    {item.excerpt}
+                  </p>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
 
         <div className="text-center">
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="hover-elevate active-elevate-2"
-            data-testid="button-view-all-news"
-          >
-            {c.viewAll}
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link href="/news">
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="hover-elevate active-elevate-2"
+              data-testid="button-view-all-news"
+            >
+              {c.viewAll}
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
