@@ -2,6 +2,14 @@ import { useState } from "react";
 import { useApp } from "@/contexts/AppContext";
 import PageLayout from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
+import sportsImg1 from "@assets/stock_images/sri_lankan_school_gi_cb56b1dc.jpg";
+import sportsImg2 from "@assets/stock_images/sri_lankan_school_gi_9e145391.jpg";
+import sportsImg3 from "@assets/stock_images/sri_lankan_school_gi_019a88cc.jpg";
+import culturalImg1 from "@assets/stock_images/sri_lankan_school_cu_8cf41eba.jpg";
+import culturalImg2 from "@assets/stock_images/sri_lankan_school_cu_7f1b3a04.jpg";
+import culturalImg3 from "@assets/stock_images/sri_lankan_school_cu_0ae1f61c.jpg";
+import ceremonyImg1 from "@assets/stock_images/sri_lankan_school_an_dec45e84.jpg";
+import ceremonyImg2 from "@assets/stock_images/sri_lankan_school_an_3d1299c8.jpg";
 
 export default function Gallery() {
   const { language } = useApp();
@@ -108,6 +116,62 @@ export default function Gallery() {
       titleEn: "School Information",
       titleSi: "පාසල් තොරතුරු",
       category: "infrastructure"
+    },
+    {
+      id: 11,
+      image: sportsImg1,
+      titleEn: "Annual Sports Meet",
+      titleSi: "වාර්ෂික ක්‍රීඩා රැස්වීම",
+      category: "sports"
+    },
+    {
+      id: 12,
+      image: sportsImg2,
+      titleEn: "Athletics Competition",
+      titleSi: "මලල ක්‍රීඩා තරඟාවලිය",
+      category: "sports"
+    },
+    {
+      id: 13,
+      image: sportsImg3,
+      titleEn: "Sports Day Events",
+      titleSi: "ක්‍රීඩා දින උත්සව",
+      category: "sports"
+    },
+    {
+      id: 14,
+      image: culturalImg1,
+      titleEn: "Traditional Dance Performance",
+      titleSi: "සම්ප්‍රදායික නර්තන ප්‍රසංගය",
+      category: "cultural"
+    },
+    {
+      id: 15,
+      image: culturalImg2,
+      titleEn: "Kandyan Dance",
+      titleSi: "කන්දුයන් නැටුම්",
+      category: "cultural"
+    },
+    {
+      id: 16,
+      image: culturalImg3,
+      titleEn: "Cultural Festival",
+      titleSi: "සංස්කෘතික උත්සවය",
+      category: "cultural"
+    },
+    {
+      id: 17,
+      image: ceremonyImg1,
+      titleEn: "Prize Giving Ceremony",
+      titleSi: "ත්‍යාග ප්‍රදානෝත්සවය",
+      category: "school-life"
+    },
+    {
+      id: 18,
+      image: ceremonyImg2,
+      titleEn: "Annual Celebration",
+      titleSi: "වාර්ෂික සැමරුම",
+      category: "school-life"
     }
   ];
 
