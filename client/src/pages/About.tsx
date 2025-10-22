@@ -3,7 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, Users, Award, Building2, FlaskConical, Library } from "lucide-react";
-import principalImg from "@assets/stock_images/professional_woman_p_08980561.jpg";
+import principalImg from "@assets/image_1761150645668.png";
 
 export default function About() {
   const { language } = useApp();
@@ -22,9 +22,9 @@ export default function About() {
       mottoSinhala: "දැනුමෙන්, ගුණයෙන්",
       facilitiesTitle: "Our Facilities",
       principalTitle: "Principal's Profile",
-      principalName: "Mrs. K. D. Wijesinghe",
+      principalName: "Mrs. Ayanthi Rathnayake",
       principalPosition: "Principal",
-      principalBio: "Mrs. Wijesinghe brings over 25 years of educational experience to Swarnapali Balika. Under her leadership, the school has achieved remarkable academic results and expanded its facilities to better serve students."
+      principalBio: "Mrs. Rathnayake brings over 25 years of educational experience to Swarnapali Balika. Under her leadership, the school has achieved remarkable academic results and expanded its facilities to better serve students. She is dedicated to nurturing confident, competent young women who will contribute positively to society."
     },
     si: {
       pageTitle: "අප ගැන",
@@ -39,9 +39,9 @@ export default function About() {
       mottoSinhala: "දැනුමෙන්, ගුණයෙන්",
       facilitiesTitle: "අපගේ පහසුකම්",
       principalTitle: "විදුහල්පති පැතිකඩ",
-      principalName: "ශ්‍රීමතී කේ. ඩී. විජේසිංහ",
+      principalName: "ශ්‍රීමතී අයන්ති රත්නායක",
       principalPosition: "විදුහල්පති",
-      principalBio: "විජේසිංහ මහත්මිය ස්වර්ණපාලි බාලිකාවට අධ්‍යාපනික අත්දැකීම් වසර 25කට වැඩි කාලයක් ගෙන එයි. ඇයගේ නායකත්වය යටතේ පාසල කැපී පෙනෙන අධ්‍යාපනික ප්‍රතිඵල ලබා ගෙන ඇත."
+      principalBio: "රත්නායක මහත්මිය ස්වර්ණපාලි බාලිකාවට අධ්‍යාපනික අත්දැකීම් වසර 25කට වැඩි කාලයක් ගෙන එයි. ඇයගේ නායකත්වය යටතේ පාසල කැපී පෙනෙන අධ්‍යාපනික ප්‍රතිඵල ලබා ගෙන ඇත. ඇය සමාජයට ධනාත්මක ලෙස දායක වන විශ්වාසවන්ත, දක්ෂ තරුණියන් පෝෂණය කිරීමට කැප වී සිටී."
     }
   };
 

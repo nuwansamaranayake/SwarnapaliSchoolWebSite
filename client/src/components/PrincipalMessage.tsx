@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Quote } from "lucide-react";
-import principalImg from "@assets/stock_images/professional_woman_p_08980561.jpg";
+import principalImg from "@assets/image_1761150645668.png";
 
 interface PrincipalMessageProps {
   language: string;
@@ -10,13 +10,13 @@ export default function PrincipalMessage({ language }: PrincipalMessageProps) {
   const content = {
     en: {
       title: "Principal's Message",
-      name: "Mrs. K. D. Wijesinghe",
+      name: "Mrs. Ayanthi Rathnayake",
       position: "Principal",
       message: "Swarnapali Balika National School has been recognized as the leading girls school in North Central Province for several decades, due to the outstanding performances displayed by our students. My appreciation focuses on the long line of past principals for their visionary leadership in developing the school to its present status. I would also like to thank the past and present teachers for their dedication and commitment to produce exceptional results in all fields of education."
     },
     si: {
       title: "විදුහල්පති පණිවුඩය",
-      name: "ශ්‍රීමතී කේ. ඩී. විජේසිංහ",
+      name: "ශ්‍රීමතී අයන්ති රත්නායක",
       position: "විදුහල්පති",
       message: "ස්වර්ණපාලි බාලිකා ජාතික පාසල දශක ගණනාවක් තිස්සේ උතුරු මධ්‍යම පළාතේ ප්‍රමුඛතම බාලිකා පාසල ලෙස පිළිගැනීමට ලක්ව ඇත. අපේ ශිෂ්‍යයන් විසින් දක්වනු ලබන විශිෂ්ට කාර්ය සාධනයන් හේතුවෙන් මෙම පාසල වර්තමාන තත්ත්වයට දියුණු කිරීම සඳහා දූරදර්ශී නායකත්වය ලබා දුන් අතීත විදුහල්පතිවරුන් සඳහා මගේ ස්තූතිය පළ කරමි."
     }
