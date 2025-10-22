@@ -2,18 +2,6 @@ import { useState } from "react";
 import { useApp } from "@/contexts/AppContext";
 import PageLayout from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
-import img1 from "@assets/stock_images/female_students_in_u_2bec6baa.jpg";
-import img2 from "@assets/stock_images/female_students_in_u_938ca3ad.jpg";
-import img3 from "@assets/stock_images/female_students_in_u_d73621ce.jpg";
-import img4 from "@assets/stock_images/professional_woman_p_08980561.jpg";
-import img5 from "@assets/stock_images/school_computer_lab__171354a2.jpg";
-import img6 from "@assets/stock_images/school_library_stude_4237ecc1.jpg";
-import img7 from "@assets/stock_images/school_science_labor_82058253.jpg";
-import img8 from "@assets/stock_images/school_sports_day_at_0031217f.jpg";
-import img9 from "@assets/stock_images/school_sports_day_at_9d91c8e1.jpg";
-import img10 from "@assets/stock_images/sri_lankan_school_bu_f6e3c24d.jpg";
-import img11 from "@assets/stock_images/students_cultural_da_0530a279.jpg";
-import img12 from "@assets/stock_images/students_cultural_da_0a34e028.jpg";
 
 export default function Gallery() {
   const { language } = useApp();
@@ -53,87 +41,73 @@ export default function Gallery() {
   const galleryItems = [
     {
       id: 1,
-      image: img1,
-      titleEn: "Students in Uniform",
-      titleSi: "නිල ඇඳුමින් සිසුන්",
-      category: "school-life"
+      image: "https://swarnapalibalika.lk/img/school1.jpg",
+      titleEn: "School Building - Front View",
+      titleSi: "පාසල් ගොඩනැගිල්ල - ඉදිරිපස දසුන",
+      category: "infrastructure"
     },
     {
       id: 2,
-      image: img2,
-      titleEn: "School Assembly",
-      titleSi: "පාසල් රැස්වීම",
-      category: "school-life"
+      image: "https://swarnapalibalika.lk/img/school2.jpg",
+      titleEn: "School Campus",
+      titleSi: "පාසල් පරිශ්‍රය",
+      category: "infrastructure"
     },
     {
       id: 3,
-      image: img3,
-      titleEn: "Classroom Learning",
-      titleSi: "පන්ති කාමර ඉගෙනීම",
-      category: "school-life"
+      image: "https://swarnapalibalika.lk/img/school4.jpg",
+      titleEn: "School Facilities",
+      titleSi: "පාසල් පහසුකම්",
+      category: "infrastructure"
     },
     {
       id: 4,
-      image: img4,
-      titleEn: "Principal's Office",
-      titleSi: "විදුහල්පති කාර්යාලය",
-      category: "infrastructure"
+      image: "https://swarnapalibalika.lk/img/school5.jpg",
+      titleEn: "School Grounds",
+      titleSi: "පාසල් පිටිය",
+      category: "school-life"
     },
     {
       id: 5,
-      image: img5,
-      titleEn: "Computer Laboratory",
-      titleSi: "පරිගණක විද්‍යාගාරය",
-      category: "infrastructure"
+      image: "https://swarnapalibalika.lk/img/school7.jpg",
+      titleEn: "School Activities",
+      titleSi: "පාසල් ක්‍රියාකාරකම්",
+      category: "school-life"
     },
     {
       id: 6,
-      image: img6,
-      titleEn: "School Library",
-      titleSi: "පාසල් පුස්තකාලය",
-      category: "infrastructure"
+      image: "https://swarnapalibalika.lk/img/school8.jpg",
+      titleEn: "School Environment",
+      titleSi: "පාසල් පරිසරය",
+      category: "school-life"
     },
     {
       id: 7,
-      image: img7,
-      titleEn: "Science Laboratory",
-      titleSi: "විද්‍යා විද්‍යාගාරය",
-      category: "infrastructure"
+      image: "https://swarnapalibalika.lk/img/Olevel-2023.jpg",
+      titleEn: "O/L 2023 Achievement",
+      titleSi: "සා.පෙ. 2023 ජයග්‍රහණය",
+      category: "school-life"
     },
     {
       id: 8,
-      image: img8,
-      titleEn: "Annual Sports Day",
-      titleSi: "වාර්ෂික ක්‍රීඩා දිනය",
-      category: "sports"
+      image: "https://swarnapalibalika.lk/img/student.JPG",
+      titleEn: "Student Life",
+      titleSi: "ශිෂ්‍ය ජීවිතය",
+      category: "school-life"
     },
     {
       id: 9,
-      image: img9,
-      titleEn: "Athletic Meet",
-      titleSi: "මලල ක්‍රීඩා රැස්වීම",
-      category: "sports"
+      image: "https://swarnapalibalika.lk/img/our.teachers_01.jpg",
+      titleEn: "Our Teachers",
+      titleSi: "අපේ ගුරුවරු",
+      category: "school-life"
     },
     {
       id: 10,
-      image: img10,
-      titleEn: "School Building",
-      titleSi: "පාසල් ගොඩනැගිල්ල",
+      image: "https://swarnapalibalika.lk/img/information.JPG",
+      titleEn: "School Information",
+      titleSi: "පාසල් තොරතුරු",
       category: "infrastructure"
-    },
-    {
-      id: 11,
-      image: img11,
-      titleEn: "Cultural Performance",
-      titleSi: "සංස්කෘතික ප්‍රසංගය",
-      category: "cultural"
-    },
-    {
-      id: 12,
-      image: img12,
-      titleEn: "Traditional Dance",
-      titleSi: "සම්ප්‍රදායික නැටුම්",
-      category: "cultural"
     }
   ];
 
