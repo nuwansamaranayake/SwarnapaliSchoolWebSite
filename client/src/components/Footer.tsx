@@ -64,10 +64,8 @@ export default function Footer({ language }: FooterProps) {
             <ul className="space-y-2">
               {c.aboutItems.map((item, index) => (
                 <li key={index}>
-                  <Link href="/about">
-                    <a className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                      {item}
-                    </a>
+                  <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                    {item}
                   </Link>
                 </li>
               ))}
@@ -81,10 +79,8 @@ export default function Footer({ language }: FooterProps) {
             <ul className="space-y-2">
               {c.quickLinkItems.map((item, index) => (
                 <li key={index}>
-                  <Link href={`/${item.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}>
-                    <a className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                      {item}
-                    </a>
+                  <Link href={`/${item.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                    {item}
                   </Link>
                 </li>
               ))}

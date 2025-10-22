@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import {
   Dialog,
   DialogContent,
@@ -23,6 +24,7 @@ export default function LoginModal({ open, onOpenChange, onLoginSuccess, languag
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const [, setLocation] = useLocation();
 
   const content = {
     en: {
@@ -59,6 +61,7 @@ export default function LoginModal({ open, onOpenChange, onLoginSuccess, languag
       if (email === c.demoEmail && password === c.demoPassword) {
         onLoginSuccess();
         onOpenChange(false);
+        setLocation("/dashboard");
       } else {
         alert(language === 'en' ? 'Invalid credentials. Please use demo credentials.' : 'වලංගු නොවන අක්තපත්‍ර. කරුණාකර ආදර්ශන අක්තපත්‍ර භාවිතා කරන්න.');
       }
