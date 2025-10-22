@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import { Link } from "wouter";
 
 interface HeroProps {
   language: string;
@@ -57,24 +58,28 @@ export default function Hero({ language }: HeroProps) {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg" 
-              variant="default"
-              className="text-base hover-elevate active-elevate-2"
-              data-testid="button-virtual-tour"
-            >
-              {c.cta1}
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="text-base bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover-elevate active-elevate-2"
-              data-testid="button-admissions"
-            >
-              <Play className="mr-2 h-5 w-5" />
-              {c.cta2}
-            </Button>
+            <Link href="/gallery" data-testid="link-virtual-tour">
+              <Button 
+                size="lg" 
+                variant="default"
+                className="text-base hover-elevate active-elevate-2 w-full sm:w-auto"
+                data-testid="button-virtual-tour"
+              >
+                {c.cta1}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link href="/admissions" data-testid="link-admissions">
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="text-base bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover-elevate active-elevate-2 w-full sm:w-auto"
+                data-testid="button-admissions"
+              >
+                <Play className="mr-2 h-5 w-5" />
+                {c.cta2}
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
