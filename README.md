@@ -20,6 +20,7 @@ A modern, responsive, bilingual (English/Sinhala) website for **Swarnapali Balik
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [Scripts](#scripts)
+- [Deployment](#deployment)
 - [Configuration](#configuration)
 - [Demo Credentials](#demo-credentials)
 - [Design System](#design-system)
@@ -196,14 +197,266 @@ swarnapali-balika-website/
 
 ---
 
+## Deployment
+
+This section walks you through deploying the website step by step. Choose the method that works best for you.
+
+### Option 1: Deploy on Replit (Easiest for Beginners)
+
+Replit is a browser-based platform where you can run and host the site without installing anything on your computer.
+
+1. **Create a Replit account**
+   - Go to [replit.com](https://replit.com) and sign up for a free account
+
+2. **Import the project**
+   - Click the **"+ Create Repl"** button
+   - Select **"Import from GitHub"**
+   - Paste the repository URL: `https://github.com/your-username/swarnapali-balika-website.git`
+   - Click **"Import from GitHub"**
+
+3. **Install dependencies**
+   - Replit will detect the project type automatically
+   - If prompted, click **"Run"** to install dependencies. Otherwise, open the Shell tab and type:
+     ```bash
+     npm install
+     ```
+
+4. **Start the application**
+   - Click the green **"Run"** button at the top
+   - The website will open in a preview panel on the right side
+   - You will also get a public URL (like `https://your-project.your-username.repl.co`) that anyone can visit
+
+5. **Publish (make it permanently live)**
+   - Click the **"Deploy"** button in the top right
+   - Choose **"Autoscale"** or **"Reserved VM"** deployment
+   - Set the build command: `npm run build`
+   - Set the run command: `npm start`
+   - Click **"Deploy"** to publish your site
+
+> **Tip:** On Replit, the site will be available at a `.replit.app` URL that you can share with anyone. You can also connect a custom domain (like `swarnapalibalika.lk`).
+
+---
+
+### Option 2: Deploy on Render (Free Tier Available)
+
+Render is a cloud platform that can host full-stack applications with a free tier.
+
+1. **Create a Render account**
+   - Go to [render.com](https://render.com) and sign up (you can use your GitHub account)
+
+2. **Connect your GitHub repository**
+   - Click **"New +"** then select **"Web Service"**
+   - Connect your GitHub account if not already connected
+   - Select the `swarnapali-balika-website` repository
+
+3. **Configure the service**
+   - **Name**: `swarnapali-balika-website`
+   - **Runtime**: `Node`
+   - **Build Command**:
+     ```bash
+     npm install && npm run build
+     ```
+   - **Start Command**:
+     ```bash
+     npm start
+     ```
+
+4. **Set environment variables**
+   - In the **"Environment"** section, add:
+     - `NODE_ENV` = `production`
+     - `SESSION_SECRET` = any random string (e.g., `my-super-secret-key-12345`)
+   - If using a database, also add `DATABASE_URL` with your PostgreSQL connection string
+
+5. **Deploy**
+   - Click **"Create Web Service"**
+   - Render will build and deploy your site automatically
+   - Your site will be live at `https://swarnapali-balika-website.onrender.com`
+
+---
+
+### Option 3: Deploy on Vercel
+
+Vercel is great for frontend-focused projects with serverless backends.
+
+1. **Create a Vercel account**
+   - Go to [vercel.com](https://vercel.com) and sign up with your GitHub account
+
+2. **Import the project**
+   - Click **"Add New Project"**
+   - Select the `swarnapali-balika-website` repository from GitHub
+
+3. **Configure build settings**
+   - **Framework Preset**: `Other`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+
+4. **Set environment variables**
+   - Add `SESSION_SECRET` with a random string value
+
+5. **Deploy**
+   - Click **"Deploy"**
+   - Your site will be live at `https://swarnapali-balika-website.vercel.app`
+
+---
+
+### Option 4: Deploy on Railway
+
+Railway provides simple cloud hosting with GitHub integration.
+
+1. **Create a Railway account**
+   - Go to [railway.app](https://railway.app) and sign up with GitHub
+
+2. **Create a new project**
+   - Click **"New Project"**
+   - Select **"Deploy from GitHub repo"**
+   - Choose the `swarnapali-balika-website` repository
+
+3. **Configure the service**
+   - Railway auto-detects Node.js projects
+   - Add environment variables:
+     - `NODE_ENV` = `production`
+     - `SESSION_SECRET` = any random string
+
+4. **Deploy**
+   - Railway will automatically build and deploy
+   - Click **"Generate Domain"** to get a public URL
+
+---
+
+### Option 5: Deploy on a VPS (Advanced)
+
+For those who want full control on a Virtual Private Server (e.g., DigitalOcean, AWS EC2, Linode).
+
+1. **Set up your server**
+   - Get a VPS running Ubuntu 22.04 or later
+   - Connect via SSH:
+     ```bash
+     ssh your-username@your-server-ip
+     ```
+
+2. **Install Node.js**
+   ```bash
+   curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+   sudo apt-get install -y nodejs
+   ```
+
+3. **Clone and build the project**
+   ```bash
+   git clone https://github.com/your-username/swarnapali-balika-website.git
+   cd swarnapali-balika-website
+   npm install
+   npm run build
+   ```
+
+4. **Set environment variables**
+   ```bash
+   export NODE_ENV=production
+   export SESSION_SECRET=your-secret-key-here
+   ```
+   For permanent variables, add them to `/etc/environment` or use a `.env` file.
+
+5. **Install PM2 (process manager)**
+   PM2 keeps your site running even after you close the terminal or if it crashes.
+   ```bash
+   sudo npm install -g pm2
+   pm2 start npm --name "swarnapali-website" -- start
+   pm2 startup
+   pm2 save
+   ```
+
+6. **Set up Nginx (web server)**
+   Nginx acts as a reverse proxy, forwarding web traffic to your Node.js app.
+   ```bash
+   sudo apt install nginx
+   ```
+
+   Create a configuration file:
+   ```bash
+   sudo nano /etc/nginx/sites-available/swarnapali
+   ```
+
+   Paste this configuration:
+   ```nginx
+   server {
+       listen 80;
+       server_name your-domain.com www.your-domain.com;
+
+       location / {
+           proxy_pass http://localhost:5000;
+           proxy_http_version 1.1;
+           proxy_set_header Upgrade $http_upgrade;
+           proxy_set_header Connection 'upgrade';
+           proxy_set_header Host $host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+           proxy_cache_bypass $http_upgrade;
+       }
+   }
+   ```
+
+   Enable the site and restart Nginx:
+   ```bash
+   sudo ln -s /etc/nginx/sites-available/swarnapali /etc/nginx/sites-enabled/
+   sudo nginx -t
+   sudo systemctl restart nginx
+   ```
+
+7. **Set up SSL (HTTPS) with Let's Encrypt**
+   This makes your site secure with the padlock icon in the browser.
+   ```bash
+   sudo apt install certbot python3-certbot-nginx
+   sudo certbot --nginx -d your-domain.com -d www.your-domain.com
+   ```
+   Follow the prompts and Certbot will automatically configure SSL.
+
+8. **Your site is now live!**
+   Visit `https://your-domain.com` to see your website.
+
+---
+
+### Connecting a Custom Domain
+
+After deploying on any platform, you can connect a custom domain (like `swarnapalibalika.lk`):
+
+1. **Purchase a domain** from a domain registrar (e.g., Namecheap, GoDaddy, Google Domains)
+
+2. **Update DNS settings** - Add these records in your domain registrar's DNS settings:
+   - **A Record**: Points to your server's IP address
+   - **CNAME Record**: Points to your hosting platform's URL (e.g., `your-project.onrender.com`)
+
+3. **Configure the domain on your hosting platform** - Each platform has a "Custom Domains" section where you add your domain name
+
+4. **Wait for DNS propagation** - DNS changes can take up to 48 hours to take effect worldwide, but usually happen within a few minutes to a few hours
+
+> **Note for Sri Lankan domains (.lk):** You can register `.lk` domains through [LK Domain Registry](https://www.nic.lk/).
+
+---
+
+### Troubleshooting Deployment
+
+| Problem | Solution |
+|---------|----------|
+| Site shows blank page | Make sure you ran `npm run build` before starting with `npm start` |
+| Port already in use | Change the port by setting the `PORT` environment variable |
+| Dependencies fail to install | Delete `node_modules` folder and `package-lock.json`, then run `npm install` again |
+| CSS/styles not loading | Clear browser cache (Ctrl+Shift+R) and ensure the build completed without errors |
+| Images not loading | Check that the `attached_assets/stock_images/` folder was included in the deployment |
+| "Module not found" error | Run `npm install` again to ensure all dependencies are installed |
+| Site works locally but not deployed | Check that all environment variables are set on the hosting platform |
+
+---
+
 ## Configuration
 
 ### Environment Variables
 
 | Variable | Required | Description |
 |----------|----------|-------------|
+| `NODE_ENV` | For production | Set to `production` for deployed sites |
 | `DATABASE_URL` | For production | PostgreSQL connection string (Neon serverless) |
-| `SESSION_SECRET` | For production | Secret key for session management |
+| `SESSION_SECRET` | For production | Secret key for session management (any random string, keep it private) |
+| `PORT` | Optional | Port number for the server (default: 5000) |
 
 ### Development
 
