@@ -25,6 +25,7 @@ A modern, responsive, bilingual (English/Sinhala) website for **Swarnapali Balik
 - [Demo Credentials](#demo-credentials)
 - [Design System](#design-system)
 - [Bilingual Support](#bilingual-support)
+- [Documentation](#documentation)
 - [Screenshots](#screenshots)
 - [Future Enhancements](#future-enhancements)
 - [Contributing](#contributing)
@@ -516,6 +517,22 @@ All content including:
 - School motto display
 
 ...is fully translated in both languages.
+
+---
+
+## Documentation
+
+Comprehensive developer documentation is available in the [`docs/`](docs/) folder:
+
+| Document | Description |
+|----------|-------------|
+| [Architecture](docs/ARCHITECTURE.md) | System architecture, diagrams, data flow, build pipeline |
+| [Component Guide](docs/COMPONENT_GUIDE.md) | Every component's props, usage, and patterns |
+| [API Reference](docs/API_REFERENCE.md) | Backend endpoints, middleware, storage interface |
+| [Database Schema](docs/DATABASE_SCHEMA.md) | Tables, types, validation, migration guide |
+| [Design System](docs/DESIGN_SYSTEM.md) | Colors, typography, spacing, dark mode, interaction states |
+| [Development Guide](docs/DEVELOPMENT_GUIDE.md) | Setup, workflow, conventions, common tasks, troubleshooting |
+| [Changelog](docs/CHANGELOG.md) | Version history and planned features |
 
 ---
 
